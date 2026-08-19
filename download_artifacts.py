@@ -26,7 +26,7 @@ import urllib.request
 from pathlib import Path
 
 # Zenodo record id, assigned on publication.
-ZENODO_RECORD = "XXXXXXX"
+ZENODO_RECORD = "22016990"
 ZENODO_BASE = f"https://zenodo.org/records/{ZENODO_RECORD}/files"
 
 ROOT = Path(__file__).resolve().parent

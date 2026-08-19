@@ -38,7 +38,7 @@ to the script that produces it.
 This repository contains **code only**. Datasets, trained checkpoints, and the
 saved evaluation outputs are archived on Zenodo:
 
-> DOI: `10.5281/zenodo.XXXXXXX` *(replace before publication)*
+> DOI: `10.5281/zenodo.22016990`
 
 Fetch and unpack them into the expected locations with
 
