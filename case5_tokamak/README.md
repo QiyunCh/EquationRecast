@@ -57,12 +57,13 @@ data unification, not extrapolation to an unseen device.
 
 | | |
 |---|---|
-| Pairs | 3,464 one-step pairs across four devices after removing initialization transients and numerically corrupted states |
+| Pairs | 4,208 one-step pairs after removing initialization transients and numerically corrupted states, over five simulation sets covering four geometries: `CMOD_AT_` 964 and `CMOD_SO_` 1024 (both Alcator C-Mod), `CMOD_NewGeo_SO_` 952 (C-Mod flat divertor), `SPARC_` 524, `ARC_` 744 |
 | Canonical grid | $256\times256$ unit disk; loss evaluated only on valid mapped pixels via a binary mask |
-| Split | 10% held out for validation |
+| Split | 15% held out for validation (3,575 train / 633 validation, split seed 1029) |
 | Medium models | 32 modes, width 64 |
 | Large models | 48 modes, width 128 |
 | Main text | LocalNO-L |
+| Reported per-device errors | Table S.3 uses `CMOD_AT_` as the Alcator C-Mod representative; Fig. 5 shows one panel per geometry, so `CMOD_SO_` (same geometry as `CMOD_AT_`) is not plotted separately |
 
 `Train.sbatch` targets a SLURM cluster (2 nodes × 4 GPUs); change the partition
 name and the conda environment before use.
