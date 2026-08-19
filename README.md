@@ -52,11 +52,12 @@ is included.
 
 **M3D-C1 simulation data are not released.** The tokamak case
 (`case5_tokamak/`) ships the complete pipeline — harmonic mapping, canonical-domain
-assembly, models, training, and evaluation — but no simulation outputs and no
-weights derived from them. The M3D-C1 datasets and the device configurations they
-encode are subject to third-party and machine-specific restrictions; requests
-should be directed to the corresponding authors. The pipeline runs unchanged on
-any equivalent finite-element dataset exposing the same field names
+assembly, models, training, and evaluation — together with the trained weights for
+all four architectures and their normalization statistics on Zenodo. Only the
+underlying simulation outputs are withheld: they and the device configurations
+they encode are subject to third-party and machine-specific restrictions, and
+requests should be directed to the corresponding authors. The pipeline runs
+unchanged on any equivalent finite-element dataset exposing the same field names
 (see [`case5_tokamak/README.md`](case5_tokamak/README.md)).
 
 ## Installation

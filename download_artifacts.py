@@ -14,8 +14,8 @@ Usage
     python download_artifacts.py --case case4_ns_2d --skip-budget   # omit the 5.8 GB ablation
     python download_artifacts.py --case case1_adr_1d --kind checkpoints
 
-Nothing is downloaded for ``case5_tokamak``: the M3D-C1 simulation dataset and
-the weights derived from it are not part of the release.
+For ``case5_tokamak`` the trained weights and normalization statistics are
+released, but the M3D-C1 simulation data they were trained on are not.
 """
 from __future__ import annotations
 
@@ -95,7 +95,15 @@ for _p in ("Pe1_Da1", "Pe2_Da2", "Pe2_Da4", "Pe2_Da6", "Pe10_Da10", "Pe25_Da2"):
     FILES[f"{base}/checkpoints/fno_{_p}_stage1.pt"] = (f"{dest}/models/fno_{_p}_stage1.pt", 6)
     FILES[f"{base}/results/scan_{_p}_stage1.h5"] = (f"{dest}/results/scan_{_p}_stage1.h5", 1)
 
-CASES = ("case1_adr_1d", "case2_rd_1d", "case3_helmholtz_1d", "case4_ns_2d")
+# Tokamak: trained weights and the normalization statistics are released; the
+# M3D-C1 simulation data they were trained on are not.
+for _m, _mb in (("FNO_M", 68), ("FNO_L", 601), ("LocalNO_M", 69), ("LocalNO_L", 605)):
+    FILES[f"case5_tokamak/checkpoints/{_m}.pt"] = (f"case5_tokamak/checkpoints/{_m}.pt", _mb)
+FILES["case5_tokamak/normalization/stats_train.json"] = (
+    "case5_tokamak/normalization/stats_train.json", 1)
+
+CASES = ("case1_adr_1d", "case2_rd_1d", "case3_helmholtz_1d", "case4_ns_2d",
+         "case5_tokamak")
 
 
 def selected(case: str, kind: str | None, skip_budget: bool) -> dict[str, tuple[str, int]]:

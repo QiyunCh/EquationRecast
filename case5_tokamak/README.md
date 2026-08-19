@@ -1,11 +1,13 @@
 # Case 5 — Multi-device tokamak electron-temperature equation (Fig. 5, SI S5)
 
-> **The M3D-C1 simulation dataset is not released, and neither are weights
-> trained on it.** The complete pipeline is provided so the method can be
-> reproduced on any equivalent finite-element dataset. The M3D-C1 outputs and
-> the device configurations they encode are subject to third-party and
-> machine-specific restrictions; requests should be directed to the
-> corresponding authors.
+> **The M3D-C1 simulation dataset is not released.** The trained weights for all
+> four architectures of Table S.3, and the normalization statistics needed to use
+> them, *are* released on Zenodo; only the underlying simulation outputs are
+> withheld, because they and the device configurations they encode are subject to
+> third-party and machine-specific restrictions. Requests for the simulation data
+> should be directed to the corresponding authors. The complete pipeline is
+> provided so the method can also be reproduced on any equivalent
+> finite-element dataset.
 
 Electron-temperature (energy) equation extracted from high-fidelity M3D-C1
 simulations of four devices: Alcator C-Mod, Alcator C-Mod with a flat divertor,
@@ -88,6 +90,26 @@ python test/Mesh_Plot.py            # Fig. 5 mesh columns
 python test/Compare_4Models.py      # Table S.3 / Fig. S.5b
 python test/Test_FourModels.py      # Fig. S.5a
 ```
+
+## Released weights
+
+`python download_artifacts.py --case case5_tokamak` fetches (1.41 GB):
+
+| File | Model | Table S.3 mean rel. $L^2$ on $\Delta T_e$ | Loaded by |
+|---|---|---|---|
+| `checkpoints/FNO_M.pt` | FNO, 32 modes, width 64 | 7.86% | `Train/FNO_Med/best_model.pt` |
+| `checkpoints/FNO_L.pt` | FNO, 48 modes, width 128 | 3.30% | `Train/Model_Large/final_model.pt` |
+| `checkpoints/LocalNO_M.pt` | LocalNO, 32 modes, width 64 | 6.53% | `Train/LocalNO_Med/best_model.pt` |
+| `checkpoints/LocalNO_L.pt` | LocalNO, 48 modes, width 128 | **2.67%** (main text) | `Train/LocalNO_Large/Train_2/best_model.pt` |
+| `normalization/stats_train.json` | masked channel statistics, train/validation split | — | `Data/CalStat/stats_train.json` |
+
+The last column is the path each file is expected at in the `CONFIG` block of
+`test/Compare_4Models.py` and `test/Test_FourModels.py`; either copy the files
+there or edit `CONFIG`. All four are plain `state_dict`s with keys prefixed
+`model.`, saved exactly as produced by training.
+
+The weights can be loaded and inspected without the M3D-C1 data, but running
+inference needs a compatible finite-element dataset.
 
 The mesh utilities are shared by all four devices; the copies here are the
 Alcator C-Mod instances, which differ from the other devices only in input paths

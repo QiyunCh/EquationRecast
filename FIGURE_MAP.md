@@ -14,7 +14,7 @@ paths are relative to the Zenodo archive (see `download_artifacts.py`).
 | Fig. 3a | Reaction–diffusion, Model 1 vs Model 2 over $k$ | `case2_rd_1d/scripts/Test_Compare.py` | `case2_rd_1d/checkpoints/*.pt` |
 | Fig. 3b | Helmholtz, error and iteration count near resonances | `case3_helmholtz_1d/scripts/Test_Compare.py` | `case3_helmholtz_1d/checkpoints/*.pt` |
 | Fig. 4 | NS: accuracy and PDE residual vs Re; error spectra and error fields | `case4_ns_2d/scripts/Test_Compare.py` → `Plot_NS_Baseline_Variants.py` (`make_variant("A_errspec", fields_mode="absdiff")`) | `case4_ns_2d/checkpoints/*.pt`, `case4_ns_2d/results/test3_compare.h5`, `test3_fields.h5` |
-| Fig. 5 | Tokamak: four geometries, canonical-domain prediction and physical-domain error | `case5_tokamak/scripts/test/Plot_LocalNO_Panel.py` + `Mesh_Plot.py` | M3D-C1 data — **not released** |
+| Fig. 5 | Tokamak: four geometries, canonical-domain prediction and physical-domain error | `case5_tokamak/scripts/test/Plot_LocalNO_Panel.py` + `Mesh_Plot.py` | `case5_tokamak/checkpoints/LocalNO_L.pt`, `normalization/stats_train.json`; M3D-C1 data **not released** |
 
 ## Supplementary Information
 
@@ -26,7 +26,7 @@ paths are relative to the Zenodo archive (see `download_artifacts.py`).
 | Fig. S.3 | Convergence trajectories and inference cost at matched accuracy | `case4_ns_2d/scripts/data_budget/Test_RecastConvergence.py` | `case4_ns_2d/data_budget/results/recast_convergence.h5` |
 | Table S.2 | NS data-budget ablation, four model families × four budgets | `case4_ns_2d/scripts/data_budget/Run_All_Budgets.py` → `Test_Compare.py` | `case4_ns_2d/data_budget/checkpoints/*` (16), `data_budget/data/*` |
 | Fig. S.4 | Budget ablation resolved in Reynolds number | `case4_ns_2d/scripts/data_budget/Plot_Test4.py` | `case4_ns_2d/data_budget/results/test4_compare.h5` |
-| Table S.3, Fig. S.5 | Tokamak architecture ablation, FNO/LocalNO at two scales | `case5_tokamak/scripts/test/Compare_4Models.py`, `Test_FourModels.py` | M3D-C1 data — **not released** |
+| Table S.3, Fig. S.5 | Tokamak architecture ablation, FNO/LocalNO at two scales | `case5_tokamak/scripts/test/Compare_4Models.py`, `Test_FourModels.py` | `case5_tokamak/checkpoints/{FNO_M,FNO_L,LocalNO_M,LocalNO_L}.pt`; M3D-C1 data **not released** |
 
 ## Supporting analyses referenced in the text but not shown
 
