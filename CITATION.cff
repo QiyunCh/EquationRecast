@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the accompanying paper."
 title: "Equation Recast for Canonical Operator Learning Across Parametric PDEs"
 type: software
+repository-code: "https://github.com/QiyunCh/EquationRecast"
 license: MIT
 authors:
   - family-names: Cheng
