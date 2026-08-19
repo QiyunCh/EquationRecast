@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "Equation Recast for Canonical Operator Learning Across Parametric PDEs"
+type: software
+license: MIT
+authors:
+  - family-names: Cheng
+    given-names: Qiyun
+    affiliation: "Plasma Science and Fusion Center, Massachusetts Institute of Technology"
+    email: chengq@psfc.mit.edu
+  - family-names: Duruisseaux
+    given-names: Valentin
+    affiliation: "Computing and Mathematical Sciences, California Institute of Technology"
+  - family-names: Clauser
+    given-names: Cesar F.
+    affiliation: "Plasma Science and Fusion Center, Massachusetts Institute of Technology"
+  - family-names: Sahadath
+    given-names: Md Hossain
+    affiliation: "Department of Mechanical, Aerospace, and Nuclear Engineering, Rensselaer Polytechnic Institute"
+  - family-names: Yang
+    given-names: Huihua
+    affiliation: "Department of Mechanical, Aerospace, and Nuclear Engineering, Rensselaer Polytechnic Institute"
+  - family-names: Pan
+    given-names: Shaowu
+    affiliation: "Department of Mechanical, Aerospace, and Nuclear Engineering, Rensselaer Polytechnic Institute"
+  - family-names: Ferraro
+    given-names: Nathaniel
+    affiliation: "Princeton Plasma Physics Laboratory"
+  - family-names: Anandkumar
+    given-names: Anima
+    affiliation: "Computing and Mathematical Sciences, California Institute of Technology"
+  - family-names: Ji
+    given-names: Wei
+    affiliation: "Department of Mechanical, Aerospace, and Nuclear Engineering, Rensselaer Polytechnic Institute"
+  - family-names: Rea
+    given-names: Cristina
+    affiliation: "Plasma Science and Fusion Center, Massachusetts Institute of Technology"
+keywords:
+  - operator learning
+  - parametric PDEs
+  - equation recast
+  - neural operators
+  - Fourier neural operator
+references:
+  - type: data
+    title: "Equation Recast — datasets, trained weights, and evaluation outputs"
+    doi: 10.5281/zenodo.XXXXXXX

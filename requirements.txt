@@ -1,0 +1,13 @@
+# Core (all cases)
+numpy>=1.24
+scipy>=1.10
+h5py>=3.8
+matplotlib>=3.7
+torch>=2.0            # install per https://pytorch.org for your CUDA version
+
+# Neural-operator architectures (case 5; optional elsewhere)
+neuraloperator>=1.0
+
+# Finite-element interpolation / meshing utilities (case 5 only)
+# scikit-learn is used for nearest-neighbour interpolation on FE meshes
+scikit-learn>=1.3

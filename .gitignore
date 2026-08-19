@@ -1,0 +1,22 @@
+# Generated data (regenerate with the solver scripts in each case)
+*.h5
+*.hdf5
+
+# Outputs
+results/
+Results/
+outputs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
