@@ -151,7 +151,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--case", default="all", choices=("all",) + CASES)
-    ap.add_argument("--kind", choices=("data", "checkpoints", "results"),
+    ap.add_argument("--kind", choices=("data", "checkpoints", "results", "normalization"),
                     help="restrict to one artifact kind")
     ap.add_argument("--skip-budget", action="store_true",
                     help="omit the 5.8 GB Navier-Stokes data-budget ablation")
